@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telegram WebApp UI</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0b0d12;
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      padding: 30px 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .logo img {
+      width: 42px;
+      height: 42px;
+    }
+
+    .title {
+      font-size: 15px;
+      color: #bdbdbd;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    .highlight {
+      background: linear-gradient(90deg,#ff8a00,#ff00c8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+
+    .preview {
+      width: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+      margin-bottom: 35px;
+      box-shadow: 0 0 30px rgba(255,255,255,0.05);
+    }
+
+    .preview img {
+      width: 100%;
+      display: block;
+    }
+
+    .card {
+      background: #12151c;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 24px;
+      backdrop-filter: blur(20px);
+    }
+
+    .card h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .input {
+      width: 100%;
+      padding: 15px;
+      background: #1b1f27;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      color: white;
+      margin-bottom: 14px;
+      font-size: 15px;
+    }
+
+    .input:focus {
+      outline: none;
+      border-color: #2d7fff;
+    }
+
+    .btn {
+      width: 100%;
+      border: none;
+      border-radius: 14px;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: #1d65ff;
+      color: white;
+      margin-top: 8px;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: white;
+      margin-top: 12px;
+    }
+
+    .small {
+      margin-top: 18px;
+      text-align: center;
+      color: #8f8f8f;
+      font-size: 13px;
+    }
+
+    .notice {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #6d6d6d;
+      text-align: center;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="logo">
+      <h1>Instagram UI</h1>
+    </div>
+
+    <div class="title">
+      Посмотрите, какими моментами из жизни поделились ваши
+      <span class="highlight">близкие друзья</span>
+    </div>
+
+    <div class="preview">
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop" alt="preview">
+    </div>
+
+    <div class="card">
+      <h2>Войти</h2>
+
+      <input class="input" type="text" placeholder="Имя пользователя">
+      <input class="input" type="password" placeholder="Пароль">
+
+      <button class="btn btn-primary" onclick="demoLogin()">
+        Войти
+      </button>
+
+      <button class="btn btn-secondary">
+        Создать аккаунт
+      </button>
+
+      <div class="small">
+        Telegram WebApp Demo Interface
+      </div>
+
+      <div class="notice">
+        Этот интерфейс является только UI-макетом.
+        Не используйте его для сбора реальных паролей или данных аккаунтов.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const tg = window.Telegram.WebApp;
+    tg.expand();
+
+    function demoLogin() {
+      alert('Demo UI: подключи сюда свою безопасную авторизацию через API/OAuth.');
+    }
+  </script>
+</body>
+</html>
